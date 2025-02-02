@@ -2,6 +2,11 @@
 namespace Hesabfa\Core;
 
 class Core {
+    public static function init() {
+        // بارگذاری منوهای اداری
+        self::add_admin_menu();
+    }
+
     public static function add_admin_menu() {
         add_menu_page(
             'حسابفا',
@@ -45,5 +50,8 @@ class Core {
         }
     }
 
-
+    public static function render_main_page() {
+        // اینجا می‌توانید محتوای صفحه اصلی را رندر کنید
+        echo '<h1>خوش آمدید به حسابفا</h1>';
+    }
 }
