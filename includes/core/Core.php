@@ -39,7 +39,7 @@ class Core {
     public static function render_main_page() {
         echo '<h1>خوش آمدید به حسابفا</h1>';
         echo '<br>';
-        echo '<h1>برنامه حسابداری پیشرفته پارس تک '
+        echo '<h1> برنامه حسابداری پیشرفته پارس تک ';
 
     }
 
