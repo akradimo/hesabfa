@@ -33,7 +33,25 @@
     src: url('Fonts/bakh/Yekan-Bakh-FaNum-Thin.woff') format('woff');  
     font-weight: 100; /* Thin */  
 }
+body {  
+    font-family: 'Yekan-Bakh-FaNum', sans-serif;  
+}  
 
+h1 {  
+    font-weight: bold; /* استفاده از Bold */  
+}  
+
+h2 {  
+    font-weight: 500; /* استفاده از Medium */  
+}  
+
+h3 {  
+    font-weight: 300; /* استفاده از Light */  
+}  
+
+p {  
+    font-weight: normal; /* استفاده از Regular */  
+}
 /* استایل‌های پایه */
 .hesabfa-container {
     padding: 20px;
