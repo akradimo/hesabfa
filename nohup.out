@@ -1,0 +1,52 @@
+[master (root-commit) dcced25] Auto-deploy changes
+ 40 files changed, 108 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 assets/css/styles.css
+ create mode 100644 assets/js/scripts.js
+ create mode 100644 deploy.sh
+ create mode 100644 hesabfa.php
+ create mode 100644 includes/admin/AdminAjax.php
+ create mode 100644 includes/admin/AdminMenu.php
+ create mode 100644 includes/admin/AdminSettings.php
+ create mode 100644 includes/api/ProductApi.php
+ create mode 100644 includes/api/ReportApi.php
+ create mode 100644 includes/api/SaleApi.php
+ create mode 100644 includes/controllers/ProductController.php
+ create mode 100644 includes/controllers/PurchaseController.php
+ create mode 100644 includes/controllers/ReportController.php
+ create mode 100644 includes/controllers/SaleController.php
+ create mode 100644 includes/core/Core.php
+ create mode 100644 includes/core/Installer.php
+ create mode 100644 includes/core/Router.php
+ create mode 100644 includes/helpers/DatabaseHelper.php
+ create mode 100644 includes/helpers/TaxHelper.php
+ create mode 100644 includes/helpers/ValidationHelper.php
+ create mode 100644 includes/languages/hesabfa-fa_IR.po
+ create mode 100644 includes/models/Product.php
+ create mode 100644 includes/models/Purchase.php
+ create mode 100644 includes/models/Report.php
+ create mode 100644 includes/models/Sale.php
+ create mode 100644 includes/views/products/add.php
+ create mode 100644 includes/views/products/edit.php
+ create mode 100644 includes/views/products/list.php
+ create mode 100644 includes/views/purchases/add.php
+ create mode 100644 includes/views/purchases/edit.php
+ create mode 100644 includes/views/purchases/list.php
+ create mode 100644 includes/views/reports/profit-loss.php
+ create mode 100644 includes/views/reports/purchases.php
+ create mode 100644 includes/views/reports/sales.php
+ create mode 100644 includes/views/sales/add.php
+ create mode 100644 includes/views/sales/edit.php
+ create mode 100644 includes/views/sales/list.php
+ create mode 100644 nohup.out
+ create mode 100644 uninstall.php
+error: src refspec main does not match any
+error: failed to push some refs to '[https://github.com/akradimo/hesabfa]'
+On branch master
+nothing to commit, working tree clean
+error: src refspec main does not match any
+error: failed to push some refs to '[https://github.com/akradimo/hesabfa]'
+On branch master
+nothing to commit, working tree clean
+error: src refspec main does not match any
+error: failed to push some refs to '[https://github.com/akradimo/hesabfa]'
