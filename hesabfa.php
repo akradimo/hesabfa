@@ -10,20 +10,7 @@ Author: شما
 if (!defined('ABSPATH')) {
     exit;
 }
-// Include necessary files
-require_once plugin_dir_path(__FILE__) . 'includes/activate.php';
-require_once plugin_dir_path(__FILE__) . 'includes/enqueue-scripts.php';
-require_once plugin_dir_path(__FILE__) . 'includes/admin-page.php';
-require_once plugin_dir_path(__FILE__) . 'includes/process-form.php';
 
-// Register activation hook
-register_activation_hook(__FILE__, 'hesabfa_activate');
-
-// Add admin menu
-add_action('admin_menu', 'hesabfa_admin_menu');
-
-// Enqueue scripts and styles
-add_action('admin_enqueue_scripts', 'hesabfa_enqueue_scripts');
 // تعریف ثابت‌ها
 define('HESABFA_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('HESABFA_PLUGIN_URL', plugin_dir_url(__FILE__));
