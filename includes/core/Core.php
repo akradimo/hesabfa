@@ -45,12 +45,21 @@ class Core {
             'فاکتورها',
             'manage_options',
             'hesabfa-invoices',
-            [self::class, 'handle_invoices_page'] // افزودن صفحه مدیریت فاکتورها
+            [self::class, 'handle_invoices_page']
         );
     }
 
     public static function enqueue_scripts() {
+        // بارگذاری Bootstrap CSS
+        wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
+
+        // بارگذاری استایل‌های اختصاصی
         wp_enqueue_style('hesabfa-styles', HESABFA_PLUGIN_URL . 'assets/css/styles.css');
+
+        // بارگذاری Bootstrap JS
+        wp_enqueue_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', ['jquery'], null, true);
+
+        // بارگذاری اسکریپت‌های اختصاصی
         wp_enqueue_script('hesabfa-scripts', HESABFA_PLUGIN_URL . 'assets/js/scripts.js', ['jquery'], null, true);
     }
 
