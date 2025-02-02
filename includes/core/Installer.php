@@ -91,6 +91,7 @@ class Installer {
 
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql_products);
+        dbDelta($sql_invoices);
         dbDelta($sql_groups);
         dbDelta($sql_units);
         dbDelta($sql_services); // اجرای کد ایجاد جدول خدمات
