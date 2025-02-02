@@ -29,6 +29,4 @@ register_deactivation_hook(__FILE__, ['Hesabfa\Core\Installer', 'deactivate']);
 register_uninstall_hook(__FILE__, ['Hesabfa\Core\Installer', 'uninstall']);
 
 // شروع پلاگین
-add_action('plugins_loaded', function () {
-    Hesabfa\Core\Core::init();
-});
+add_action('plugins_loaded', ['Hesabfa\Core\Core', 'init']);
