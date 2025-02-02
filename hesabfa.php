@@ -18,15 +18,9 @@ define('HESABFA_PLUGIN_URL', plugin_dir_url(__FILE__));
 // بارگذاری فایل‌های ضروری
 require_once HESABFA_PLUGIN_DIR . 'includes/controllers/ProductController.php'; // بارگذاری کنترلر محصول
 require_once HESABFA_PLUGIN_DIR . 'includes/core/Core.php';
-require_once HESABFA_PLUGIN_DIR . 'includes/core/Installer.php'; // بارگذاری کنترلر نصب
+require_once HESABFA_PLUGIN_DIR . 'includes/core/Installer.php';
+// بارگذاری فایل‌های ضروری
 require_once HESABFA_PLUGIN_DIR . 'includes/models/Product.php'; // بارگذاری مدل محصول
-
-// بارگذاری فایل‌های اضافی
-require_once plugin_dir_path(__FILE__) . 'includes/activate.php';
-require_once plugin_dir_path(__FILE__) . 'includes/enqueue-scripts.php';
-require_once plugin_dir_path(__FILE__) . 'includes/admin-page.php';
-require_once plugin_dir_path(__FILE__) . 'includes/process-form.php';
-
 // فعال‌سازی پلاگین
 register_activation_hook(__FILE__, ['Hesabfa\Core\Installer', 'activate']);
 
@@ -39,8 +33,3 @@ register_uninstall_hook(__FILE__, ['Hesabfa\Core\Installer', 'uninstall']);
 // شروع پلاگین
 add_action('plugins_loaded', ['Hesabfa\Core\Core', 'init']);
 
-// منوی مدیریت را اضافه کنید
-add_action('admin_menu', 'hesabfa_admin_menu');
-
-// بارگذاری اسکریپت‌ها و استایل‌ها
-add_action('admin_enqueue_scripts', 'hesabfa_enqueue_scripts');
