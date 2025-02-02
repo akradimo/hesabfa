@@ -38,6 +38,15 @@ class Core {
             'hesabfa-services',
             [self::class, 'handle_services_page']
         );
+
+        add_submenu_page(
+            'hesabfa',
+            'فاکتورها',
+            'فاکتورها',
+            'manage_options',
+            'hesabfa-invoices',
+            [self::class, 'handle_invoices_page'] // افزودن صفحه مدیریت فاکتورها
+        );
     }
 
     public static function enqueue_scripts() {
@@ -73,6 +82,28 @@ class Core {
 
     public static function handle_services_page() {
         $controller = new \Hesabfa\Controllers\ServiceController();
+
+        $action = isset($_GET['action']) ? sanitize_text_field($_GET['action']) : 'list';
+        $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
+        switch ($action) {
+            case 'add':
+                $controller->add();
+                break;
+            case 'edit':
+                $controller->edit($id);
+                break;
+            case 'delete':
+                $controller->delete($id);
+                break;
+            default:
+                $controller->list();
+                break;
+        }
+    }
+
+    public static function handle_invoices_page() {
+        $controller = new \Hesabfa\Controllers\InvoiceController();
 
         $action = isset($_GET['action']) ? sanitize_text_field($_GET['action']) : 'list';
         $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
