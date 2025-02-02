@@ -68,11 +68,23 @@ class Installer {
             PRIMARY KEY (id)  
         ) $charset_collate;";
 
+        // ایجاد جدول فاکتورها
+        $table_name_invoices = $wpdb->prefix . 'hesabfa_invoices';
+        $sql_invoices = "CREATE TABLE $table_name_invoices (  
+            id mediumint(9) NOT NULL AUTO_INCREMENT,  
+            customer_name varchar(255) NOT NULL,  
+            total_amount decimal(10,2) NOT NULL,  
+            created_at datetime NOT NULL,  
+            updated_at datetime NOT NULL,  
+            PRIMARY KEY (id)  
+        ) $charset_collate;";
+
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql_products);
         dbDelta($sql_groups);
         dbDelta($sql_units);
-        dbDelta($sql_services); // اجرای کد ایجاد جدول خدمات
+        dbDelta($sql_services);
+        dbDelta($sql_invoices); // اجرای کد ایجاد جدول فاکتورها
     }
 
     public static function deactivate() {
@@ -97,5 +109,9 @@ class Installer {
         // حذف جدول واحدها
         $table_name_units = $wpdb->prefix . 'hesabfa_units';
         $wpdb->query("DROP TABLE IF EXISTS $table_name_units");
+
+        // حذف جدول فاکتورها
+        $table_name_invoices = $wpdb->prefix . 'hesabfa_invoices';
+        $wpdb->query("DROP TABLE IF EXISTS $table_name_invoices");
     }
 }
