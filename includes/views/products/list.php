@@ -6,7 +6,6 @@
         <tr>
             <th>کد محصول</th>
             <th>نام محصول</th>
-            <th>کد محصول</th>
             <th>قیمت</th>
             <th>موجودی</th>
             <th>عملیات</th>
@@ -17,7 +16,6 @@
             <tr>
                 <td><?php echo esc_html($product->code); ?></td>
                 <td><?php echo esc_html($product->name); ?></td>
-                <td><?php echo esc_html($product->code); ?></td>
                 <td><?php echo number_format($product->price, 2); ?></td>
                 <td><?php echo esc_html($product->stock); ?></td>
                 <td>
