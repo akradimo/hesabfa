@@ -19,7 +19,7 @@
                 <td><?php echo number_format($product->price, 2); ?></td>
                 <td><?php echo esc_html($product->stock); ?></td>
                 <td>
-                    <a href="<?php echo admin_url('admin.php?page=hesabfa-products&action=edit&id=' . $product->id); ?>" class="button">ویرایش</a>
+                    <a href="<?php echo admin_url('admin.php?page=hesabfa-products&action=edit&id=' . $product->id); ?>" class="button">ویرایش1</a>
                     <a href="<?php echo wp_nonce_url(admin_url('admin.php?page=hesabfa-products&action=delete&id=' . $product->id), 'hesabfa_delete_product_' . $product->id); ?>" class="button button-danger" onclick="return confirm('آیا مطمئن هستید؟');">حذف</a>
                 </td>
             </tr>
