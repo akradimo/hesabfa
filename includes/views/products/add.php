@@ -2,24 +2,22 @@
     <h1>افزودن محصول جدید</h1>
     <form method="post" action="">
         <?php wp_nonce_field('hesabfa_add_product', 'hesabfa_add_product_nonce'); ?>
-        <table class="form-table">
-            <tr>
-                <th scope="row"><label for="name">نام محصول</label></th>
-                <td><input name="name" type="text" id="name" class="regular-text" required></td>
-            </tr>
-            <tr>
-                <th scope="row"><label for="code">کد محصول</label></th>
-                <td><input name="code" type="text" id="code" class="regular-text" required></td>
-            </tr>
-            <tr>
-                <th scope="row"><label for="price">قیمت</label></th>
-                <td><input name="price" type="number" id="price" step="0.01" required></td>
-            </tr>
-            <tr>
-                <th scope="row"><label for="stock">موجودی</label></th>
-                <td><input name="stock" type="number" id="stock" required></td>
-            </tr>
-        </table>
-        <?php submit_button('افزودن محصول'); ?>
+        <div class="mb-3">
+            <label for="name" class="form-label">نام محصول</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="code" class="form-label">کد محصول</label>
+            <input type="text" class="form-control" id="code" name="code" required>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">قیمت</label>
+            <input type="number" class="form-control" id="price" name="price" step="0.01" required>
+        </div>
+        <div class="mb-3">
+            <label for="stock" class="form-label">موجودی</label>
+            <input type="number" class="form-control" id="stock" name="stock" required>
+        </div>
+        <button type="submit" class="btn btn-primary">افزودن محصول</button>
     </form>
 </div>
