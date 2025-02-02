@@ -46,6 +46,16 @@ class Installer {
         PRIMARY KEY (id)
     ) $charset_collate;";
 
+        // ایجاد جدول واحدها
+        $table_name_units = $wpdb->prefix . 'hesabfa_units';
+        $sql_units = "CREATE TABLE $table_name_units (
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        name varchar(255) NOT NULL,
+        created_at datetime NOT NULL,
+        updated_at datetime NOT NULL,
+        PRIMARY KEY (id)
+    ) $charset_collate;";
+        
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql_products);
     }
