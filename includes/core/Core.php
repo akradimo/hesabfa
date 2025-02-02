@@ -38,6 +38,7 @@ class Core {
 
     public static function render_main_page() {
         echo '<h1>خوش آمدید به حسابفا</h1>';
+        echo '<br'
     }
 
     public static function render_products_page() {
