@@ -4,7 +4,7 @@ namespace Hesabfa\Core;
 class Core {
     public static function init() {
         // بارگذاری منوهای اداری
-        self::add_admin_menu();
+        add_action('admin_menu', [self::class, 'add_admin_menu']);
     }
 
     public static function add_admin_menu() {
