@@ -15,6 +15,7 @@
         <tbody>
         <?php foreach ($products as $product) : ?>
             <tr>
+                <td><?php echo esc_html($product->code); ?></td>
                 <td><?php echo esc_html($product->name); ?></td>
                 <td><?php echo esc_html($product->code); ?></td>
                 <td><?php echo number_format($product->price, 2); ?></td>
