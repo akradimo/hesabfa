@@ -55,7 +55,7 @@ class Installer {
         updated_at datetime NOT NULL,
         PRIMARY KEY (id)
     ) $charset_collate;";
-        
+
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql_products);
     }
