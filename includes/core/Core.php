@@ -2,14 +2,6 @@
 namespace Hesabfa\Core;
 
 class Core {
-    public static function init() {
-        // بارگذاری منوهای مدیریتی
-        add_action('admin_menu', [self::class, 'add_admin_menu']);
-
-        // بارگذاری استایل‌ها و اسکریپت‌ها
-        add_action('admin_enqueue_scripts', [self::class, 'enqueue_scripts']);
-    }
-
     public static function add_admin_menu() {
         add_menu_page(
             'حسابفا',
@@ -27,7 +19,7 @@ class Core {
             'محصولات',
             'manage_options',
             'hesabfa-products',
-            [self::class, 'render_products_page']
+            [self::class, 'handle_products_page']
         );
     }
 
@@ -51,5 +43,7 @@ class Core {
                 $controller->list();
                 break;
         }
-        }
+    }
+
+
 }
