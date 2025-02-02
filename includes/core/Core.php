@@ -29,6 +29,15 @@ class Core {
             'hesabfa-products',
             [self::class, 'handle_products_page']
         );
+
+        add_submenu_page(
+            'hesabfa',
+            'خدمات',
+            'خدمات',
+            'manage_options',
+            'hesabfa-services',
+            [self::class, 'handle_services_page']
+        );
     }
 
     public static function enqueue_scripts() {
@@ -42,6 +51,28 @@ class Core {
 
     public static function handle_products_page() {
         $controller = new \Hesabfa\Controllers\ProductController();
+
+        $action = isset($_GET['action']) ? sanitize_text_field($_GET['action']) : 'list';
+        $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
+        switch ($action) {
+            case 'add':
+                $controller->add();
+                break;
+            case 'edit':
+                $controller->edit($id);
+                break;
+            case 'delete':
+                $controller->delete($id);
+                break;
+            default:
+                $controller->list();
+                break;
+        }
+    }
+
+    public static function handle_services_page() {
+        $controller = new \Hesabfa\Controllers\ServiceController();
 
         $action = isset($_GET['action']) ? sanitize_text_field($_GET['action']) : 'list';
         $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
