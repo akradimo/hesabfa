@@ -1,26 +1,21 @@
 <?php
-
 namespace Hesabfa\Controllers;
 
 use Hesabfa\Models\Service;
 
-class ServiceController
-{
+class ServiceController {
     private $serviceModel;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->serviceModel = new Service();
     }
 
-    public function list()
-    {
+    public function list() {
         $services = $this->serviceModel->getAll();
         include HESABFA_PLUGIN_DIR . 'includes/views/services/list.php';
     }
 
-    public function add()
-    {
+    public function add() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // اعتبارسنجی Nonce
             if (!isset($_POST['hesabfa_add_service_nonce']) || !wp_verify_nonce($_POST['hesabfa_add_service_nonce'], 'hesabfa_add_service')) {
@@ -44,8 +39,7 @@ class ServiceController
         include HESABFA_PLUGIN_DIR . 'includes/views/services/add.php';
     }
 
-    public function edit($id)
-    {
+    public function edit($id) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // اعتبارسنجی Nonce
             if (!isset($_POST['hesabfa_edit_service_nonce']) || !wp_verify_nonce($_POST['hesabfa_edit_service_nonce'], 'hesabfa_edit_service')) {
@@ -74,8 +68,7 @@ class ServiceController
         include HESABFA_PLUGIN_DIR . 'includes/views/services/edit.php';
     }
 
-    public function delete($id)
-    {
+    public function delete($id) {
         // اعتبارسنجی Nonce
         if (!isset($_GET['_wpnonce']) || !wp_verify_nonce($_GET['_wpnonce'], 'hesabfa_delete_service_' . $id)) {
             wp_die('درخواست نامعتبر است.');
