@@ -32,3 +32,5 @@ register_uninstall_hook(__FILE__, ['Hesabfa\Core\Installer', 'uninstall']);
 
 // شروع پلاگین
 add_action('plugins_loaded', ['Hesabfa\Core\Core', 'init']);
+
+require_once plugin_dir_path(__FILE__) . '../controllers/InvoiceController.php';
