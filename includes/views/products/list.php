@@ -4,6 +4,7 @@
     <table class="hesabfa-table">
         <thead>
         <tr>
+            <th>کد محصول</th>
             <th>نام محصول</th>
             <th>کد محصول</th>
             <th>قیمت</th>
