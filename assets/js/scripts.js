@@ -1,1 +1,3 @@
-ECHO is off.
+jQuery(document).ready(function($) {
+    // اسکریپت‌های جاوااسکریپت
+});

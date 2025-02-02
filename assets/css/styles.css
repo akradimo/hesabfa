@@ -1,1 +1,19 @@
-ECHO is off.
+/* استایل‌های پایه */
+.hesabfa-container {
+    padding: 20px;
+}
+
+.hesabfa-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hesabfa-table th, .hesabfa-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.hesabfa-table th {
+    background-color: #f4f4f4;
+    text-align: right;
+}
