@@ -36,6 +36,16 @@ class Installer {
         PRIMARY KEY (id)
     ) $charset_collate;";
 
+        $table_name_groups = $wpdb->prefix . 'hesabfa_product_groups';
+        $sql_groups = "CREATE TABLE $table_name_groups (
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        name varchar(255) NOT NULL,
+        parent_id mediumint(9),
+        created_at datetime NOT NULL,
+        updated_at datetime NOT NULL,
+        PRIMARY KEY (id)
+    ) $charset_collate;";
+
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql_products);
     }
@@ -51,4 +61,5 @@ class Installer {
         $table_name_products = $wpdb->prefix . 'hesabfa_products';
         $wpdb->query("DROP TABLE IF EXISTS $table_name_products");
     }
+
 }
