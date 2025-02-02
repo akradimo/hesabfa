@@ -11,4 +11,12 @@
             <input type="text" class="form-control" id="code" name="code" value="<?php echo esc_attr($product->code); ?>" required>
         </div>
         <div class="mb-3">
-            <label for="price" class="form-label">قیمت</label
+            <label for="price" class="form-label">قیمت</label            <input type="number" class="form-control" id="price" name="price" step="0.01" value="<?php echo esc_attr($product->price); ?>" required>
+        </div>
+        <div class="mb-3">
+            <label for="stock" class="form-label">موجودی</label>
+            <input type="number" class="form-control" id="stock" name="stock" value="<?php echo esc_attr($product->stock); ?>" required>
+        </div>
+        <button type="submit" class="btn btn-primary">ذخیره تغییرات</button>
+    </form>
+</div>
