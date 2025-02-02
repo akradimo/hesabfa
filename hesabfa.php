@@ -19,7 +19,8 @@ define('HESABFA_PLUGIN_URL', plugin_dir_url(__FILE__));
 require_once HESABFA_PLUGIN_DIR . 'includes/controllers/ProductController.php'; // بارگذاری کنترلر محصول
 require_once HESABFA_PLUGIN_DIR . 'includes/core/Core.php';
 require_once HESABFA_PLUGIN_DIR . 'includes/core/Installer.php';
-
+// بارگذاری فایل‌های ضروری
+require_once HESABFA_PLUGIN_DIR . 'includes/models/Product.php'; // بارگذاری مدل محصول
 // فعال‌سازی پلاگین
 register_activation_hook(__FILE__, ['Hesabfa\Core\Installer', 'activate']);
 
