@@ -1,23 +1,77 @@
-<div class="wrap hesabfa-container">
-    <h1>افزودن محصول جدید</h1>
-    <form method="post" action="">
-        <?php wp_nonce_field('hesabfa_add_product', 'hesabfa_add_product_nonce'); ?>
-        <div class="mb-3">
-            <label for="name" class="form-label">نام محصول</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-        </div>
-        <div class="mb-3">
-            <label for="code" class="form-label">کد محصول</label>
-            <input type="text" class="form-control" id="code" name="code" required>
-        </div>
-        <div class="mb-3">
-            <label for="price" class="form-label">قیمت</label>
-            <input type="number" class="form-control" id="price" name="price" step="0.01" required>
-        </div>
-        <div class="mb-3">
-            <label for="stock" class="form-label">موجودی</label>
-            <input type="number" class="form-control" id="stock" name="stock" required>
-        </div>
-        <button type="submit" class="btn btn-primary">افزودن محصول</button>
-    </form>
-</div>
+<form method="post" action="">
+    <table class="form-table">
+        <tr>
+            <th scope="row"><label for="product_code">کد کالا</label></th>
+            <td><input name="product_code" type="text" id="product_code" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_group">گروه</label></th>
+            <td><input name="product_group" type="text" id="product_group" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_sub_group">زیر گروه</label></th>
+            <td><input name="product_sub_group" type="text" id="product_sub_group" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_name">نام کالا</label></th>
+            <td><input name="product_name" type="text" id="product_name" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_serial">سریال</label></th>
+            <td><input name="product_serial" type="text" id="product_serial" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_barcode1">بارکرد</label></th>
+            <td><input name="product_barcode1" type="text" id="product_barcode1" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_barcode2">بارکد دوم</label></th>
+            <td><input name="product_barcode2" type="text" id="product_barcode2" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_unit">واحد</label></th>
+            <td><input name="product_unit" type="text" id="product_unit" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_tax_id">شناسه مالیاتی</label></th>
+            <td><input name="product_tax_id" type="text" id="product_tax_id" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_initial_stock">موجودی اولیه</label></th>
+            <td><input name="product_initial_stock" type="number" id="product_initial_stock" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_purchase_price">قیمت خرید</label></th>
+            <td><input name="product_purchase_price" type="number" id="product_purchase_price" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_store_purchase_price">قیمت خرید فروشگاه</label></th>
+            <td><input name="product_store_purchase_price" type="number" id="product_store_purchase_price" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_purchase_discount">تخفیف خرید</label></th>
+            <td><input name="product_purchase_discount" type="number" id="product_purchase_discount" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_sale_price">قیمت فروش</label></th>
+            <td><input name="product_sale_price" type="number" id="product_sale_price" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_store_sale_price">قیمت فروش فروشگاه</label></th>
+            <td><input name="product_store_sale_price" type="number" id="product_store_sale_price" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_sale_discount">تخفیف فروش</label></th>
+            <td><input name="product_sale_discount" type="number" id="product_sale_discount" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_tax_percentage">درصد مالیاتی</label></th>
+            <td><input name="product_tax_percentage" type="number" id="product_tax_percentage" value="" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><label for="product_description">توضیحات</label></th>
+            <td><textarea name="product_description" id="product_description" rows="5" cols="30"></textarea></td>
+        </tr>
+    </table>
+    <p class="submit"><input type="submit" class="button-primary" value="ذخیره تغییرات" /></p>
+</form>
