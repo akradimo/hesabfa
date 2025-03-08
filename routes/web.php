@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AccountController;
-use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('accounts', AccountController::class);
-Route::resource('customers', CustomerController::class);
+Auth::routes();
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('accounts', App\Http\Controllers\AccountController::class);
+});

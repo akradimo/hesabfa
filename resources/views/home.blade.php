@@ -1,60 +1,23 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-    <title>حسابفا - صفحه اصلی</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    <style>
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-            direction: rtl;
-            text-align: right;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .links > a {
-            padding: 0 25px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            color: #3490dc;
-        }
-    </style>
-</head>
-<body>
+@section('content')
 <div class="container">
-    <div class="content">
-        <div class="title">
-            به حسابفا خوش آمدید!
-        </div>
-        <div class="links">
-            <a href="{{ route('accounts.index') }}">مدیریت حساب‌ها</a>
-            <a href="{{ route('customers.index') }}">مدیریت مشتریان</a>
-            <!-- Add more links here -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">داشبورد</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    شما وارد شده‌اید!
+                </div>
+            </div>
         </div>
     </div>
 </div>
-</body>
-</html>
+@endsection
