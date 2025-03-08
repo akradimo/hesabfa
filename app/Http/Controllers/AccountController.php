@@ -77,11 +77,11 @@ class AccountController extends Controller
      * @param  \App\Models\Account  $account
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, Account $account)
     {
         $request->validate([
             'name' => 'required',
-            'code' => 'required|unique:accounts,code,' . $account->id,
+            'code' => 'required|unique:accounts,code,'.$account->id,
             'type' => 'required|in:asset,liability,equity,income,expense',
         ]);
 
