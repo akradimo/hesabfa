@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AccountRequest;
 use App\Models\Account;
-use Illuminate\Http\Request;
 
 class AccountController extends Controller
 {
@@ -34,18 +34,10 @@ class AccountController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AccountRequest $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'code' => 'required|unique:accounts',
-            'type' => 'required|in:asset,liability,equity,income,expense',
-        ]);
-
-        Account::create($request->all());
-
-        return redirect()->route('accounts.index')
-            ->with('success', 'حساب با موفقیت ایجاد شد.');
+        Account::create($request->validated());
+        return redirect()->route('accounts.index')->with('success', 'حساب با موفقیت ایجاد شد.');
     }
 
     /**
@@ -77,18 +69,10 @@ class AccountController extends Controller
      * @param  \App\Models\Account  $account
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Account $account)
+    public function update(AccountRequest $request, Account $account)
     {
-        $request->validate([
-            'name' => 'required',
-            'code' => 'required|unique:accounts,code,'.$account->id,
-            'type' => 'required|in:asset,liability,equity,income,expense',
-        ]);
-
-        $account->update($request->all());
-
-        return redirect()->route('accounts.index')
-            ->with('success', 'حساب با موفقیت ویرایش شد.');
+        $account->update($request->validated());
+        return redirect()->route('accounts.index')->with('success', 'حساب با موفقیت ویرایش شد.');
     }
 
     /**
@@ -100,8 +84,6 @@ class AccountController extends Controller
     public function destroy(Account $account)
     {
         $account->delete();
-
-        return redirect()->route('accounts.index')
-            ->with('success', 'حساب با موفقیت حذف شد.');
+        return redirect()->route('accounts.index')->with('success', 'حساب با موفقیت حذف شد.');
     }
 }

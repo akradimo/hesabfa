@@ -26,8 +26,12 @@
             <p class="lead">برنامه حسابداری آنلاین برای مدیریت آسان امور مالی</p>
             <hr class="my-4">
             <p>با حسابفا، به راحتی حساب‌های خود را مدیریت کنید و گزارش‌های دقیقی از وضعیت مالی خود دریافت کنید.</p>
-            <a class="btn btn-primary btn-lg" href="{{ route('register') }}" role="button">ثبت نام رایگان</a>
-            <a class="btn btn-success btn-lg" href="{{ route('login') }}" role="button">ورود</a>
+            @auth
+                <a class="btn btn-primary btn-lg" href="{{ route('dashboard') }}" role="button">ورود به داشبورد</a>
+            @else
+                <a class="btn btn-primary btn-lg" href="{{ route('register') }}" role="button">ثبت نام رایگان</a>
+                <a class="btn btn-success btn-lg" href="{{ route('login') }}" role="button">ورود</a>
+            @endauth
         </div>
     </div>
 

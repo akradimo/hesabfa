@@ -1,7 +1,7 @@
 <div class="sidebar">
     <ul class="list-unstyled">
         <li>
-            <a href="#">
+            <a href="{{ route('dashboard') }}">
                 <i class="fas fa-tachometer-alt"></i>
                 داشبورد
             </a>
